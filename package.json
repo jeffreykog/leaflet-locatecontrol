@@ -7,6 +7,7 @@
   "unpkg": "dist/L.Control.Locate.min.js",
   "jsdelivr": "dist/L.Control.Locate.min.js",
   "module": "dist/L.Control.Locate.esm.js",
+  "types": "dist/L.Control.Locate.d.ts",
   "author": "Dominik Moritz <domoritz@gmail.com>",
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "grunt": "^1.6.1",
     "grunt-bump": "0.8.0",
     "grunt-contrib-connect": "^4.0.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify": "^5.2.2",
     "grunt-rollup": "^12.0.0",
     "grunt-sass": "^3.1.0",

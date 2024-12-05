@@ -4,6 +4,12 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
+    copy: {
+      tsd: {
+        src: "src/L.Control.Locate.d.ts",
+        dest: "dist/L.Control.Locate.d.ts"
+      }
+    },
     uglify: {
       options: {
         banner: banner,
@@ -48,6 +54,8 @@ module.exports = function (grunt) {
           "dist/L.Control.Locate.css",
           "dist/L.Control.Locate.min.css",
           "dist/L.Control.Locate.min.css.map",
+          "dist/L.Control.Locate.d.ts",
+          "dist/L.Control.Locate.esm.js",
           "dist/L.Control.Locate.mapbox.css",
           "dist/L.Control.Locate.mapbox.min.css",
           "dist/L.Control.Locate.mapbox.min.css.map",
@@ -108,7 +116,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-rollup");
   grunt.loadNpmTasks("grunt-bump");
   grunt.loadNpmTasks("grunt-contrib-connect");
+  grunt.loadNpmTasks("grunt-contrib-copy");
 
   // Default task(s).
-  grunt.registerTask("default", ["rollup:build_es", "rollup:build_umd", "uglify", "sass"]);
+  grunt.registerTask("default", ["rollup:build_es", "rollup:build_umd", "copy", "uglify", "sass"]);
 };
