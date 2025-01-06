@@ -1,4 +1,4 @@
-import { Control, Layer, Map, ControlOptions, PathOptions, MarkerOptions, LocationEvent, LatLngBounds } from "leaflet";
+import { Control, Layer, Map, ControlOptions, PathOptions, MarkerOptions, LocationEvent, LatLngBounds, LocateOptions as LeafletLocateOptions } from "leaflet";
 
 export type SetView = false | "once" | "always" | "untilPan" | "untilPanOrZoom";
 export type ClickBehavior = "stop" | "setView";
@@ -48,7 +48,7 @@ export interface LocateOptions extends ControlOptions {
   onLocationOutsideMapBounds?: ((control: LocateControl) => void) | undefined;
   showPopup?: boolean | undefined;
   strings?: StringsOptions | undefined;
-  locateOptions?: LocateOptions | undefined;
+  locateOptions?: LeafletLocateOptions | undefined;
 }
 
 export class LocateControl extends Control {
